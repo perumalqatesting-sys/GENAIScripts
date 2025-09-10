@@ -128,6 +128,91 @@ Response:
         "id": "req_01k4qc5wxgfxpsqwx25404c44m"
     },
     "service_tier": "on_demand"
+}
 Assignment 3:
+Generate test data for credit card applications for different types of cards and conditions
 
+Prompt:
+
+Context:
+    You are a manual tester and generate test data for credit card applications for different types of cards and conditions
+
+Instruction: use different credit card applications with different cards and conditions with Student name, Secured, Rewards, Travel, Business, Balance Transfer, Luxury, Retail with 
+
+Example: 
+Features: No annual fee, low credit limit ($500), cashback on groceries and bookstores
+Conditions:
+Student name, Secured, Rewards, Travel, Business, Balance Transfer, Luxury, Retail
+Age 18+ with proof of student status
+No prior credit history required
+Proof of income (part-time job or allowance) OR co-signer
+Credit score: 680+
+Balance transfer fee (typically 3–5%)
+Approval depends on current credit utilization
+
+Persona: As a middle class people having good credit score
+
+Output format: 
+in tabular form
+
+(e.g., Student, Secured, Rewards, Travel, Business, Balance Transfer, Luxury, Retail)
+
+Tone: Please to get atleast 10 records
+
+Response:
+
+| S.No | Student Name  | Card Type        | Features                                                                | Conditions                                                                                         |
+| ---- | ------------- | ---------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| 1    | Aditi Sharma  | Student          | No annual fee, \$500 credit limit, cashback on groceries and bookstores | Age 18+, proof of student status, no credit history, co-signer or part-time job, credit score 680+ |
+| 2    | Rohan Mehta   | Secured          | \$300 refundable deposit, monthly credit reports, fraud alerts          | Credit score 680+, steady income, refundable security deposit required                             |
+| 3    | Priya Desai   | Rewards          | 2% cashback on dining, 1.5% on all purchases, ₹500 welcome bonus        | Credit score 700+, income ₹3L+/year, no late payments in last 12 months                            |
+| 4    | Arjun Patel   | Travel           | 5x points on flights, no foreign transaction fee, free travel insurance | Credit score 720+, spend ₹20K in 90 days, valid government ID                                      |
+| 5    | Sneha Iyer    | Business         | 3% cashback on office supplies, free employee cards, expense tracking   | Business PAN/GST, credit score 700+, business operational for 1+ year                              |
+| 6    | Neha Verma    | Balance Transfer | 0% APR for 18 months, 3% transfer fee, no annual fee                    | Credit score 690+, transfer above ₹15K, utilization ratio below 50%                                |
+| 7    | Akash Nair    | Luxury           | Concierge services, airport lounge access, high credit limit            | Credit score 750+, income ₹10L+/year, ₹5,000 annual fee, no defaults                               |
+| 8    | Kavya Reddy   | Retail           | 10% off first purchase, store-only usage, special sale offers           | Credit score 660+, valid store account, no annual fee                                              |
+| 9    | Harshit Singh | Student          | Cashback on books, no late fee for first missed payment, digital wallet | Age 18–24, student ID, no income required if co-signer available, credit score not mandatory       |
+| 10   | Tanya Bansal  | Travel           | 3x on hotels, 2x on dining, free trip delay coverage                    | Credit score 725+, valid Aadhaar & PAN, ₹6L+ annual income                                         |
+
+API payload
+
+{
+"model": "deepseek-r1-distill-llama-70b",
+"messages": [{
+    "role": "user",
+    "content": "You are a manual tester and generate test data for credit card applications for different types of cards and conditions"
+    
+}],
+ //"max_tokens": 500,
+  "temperature": 0.1 // use temp between 0.1 - 0.2 at max. 
+}
+
+Response:
+{
+    "id": "chatcmpl-e393fa7d-c59e-491f-b171-588e623eee94",
+    "object": "chat.completion",
+    "created": 1757469443,
+    "model": "deepseek-r1-distill-llama-70b",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "content": "<think>\nOkay, so I'm trying to understand how to generate test data for 
+
+"usage": {
+        "queue_time": 0.050897925,
+        "prompt_tokens": 23,
+        "prompt_time": 0.011004795,
+        "completion_tokens": 2258,
+        "completion_time": 7.766946662,
+        "total_tokens": 2281,
+        "total_time": 7.777951457
+    },
+    "usage_breakdown": null,
+    "system_fingerprint": "fp_1bbe7845ec",
+    "x_groq": {
+        "id": "req_01k4rnet32esztpkaffdbvy1c0"
+    },
+    "service_tier": "on_demand"
 }
