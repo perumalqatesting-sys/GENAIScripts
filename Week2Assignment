@@ -72,6 +72,42 @@ public class CreateLead {
 
 } 
 Response:
+import { test, expect } from '@playwright/test';
+
+test('Create Lead in LeafTaps CRM', async ({ page }) => {
+  // Step 1: Launch & navigate
+  await page.goto('http://leaftaps.com/opentaps');
+
+  // Step 2: Login
+  await page.fill('#username', 'DemoSalesManager');
+  await page.fill('#password', 'crmsfa');
+  await page.click('.decorativeSubmit');
+
+  // Step 3: Print title after login
+  console.log('Login Page Title:', await page.title());
+
+  // Step 4: Click CRM/SFA link
+  await page.click('text=CRM/SFA');
+
+  // Step 5: Click Create Lead link
+  await page.click('text=Create Lead');
+
+  // Step 6: Fill the form
+  await page.fill('#createLeadForm_companyName', 'TestLeaf');
+  await page.fill('#createLeadForm_firstName', 'Babu');
+  await page.fill('#createLeadForm_lastName', 'Manickam');
+
+  // Step 7: Select dropdowns
+  await page.selectOption('#createLeadForm_dataSourceId', { label: 'Employee' });
+  await page.selectOption('#createLeadForm_marketingCampaignId', { value: '9001' });
+
+  // Step 8: Click Create Lead button
+  await page.click('input[name="submitButton"]');
+
+  // Step 9: Print final title
+  console.log('Lead Created Page Title:', await page.title());
+});
+
 Logs
 
 Running 1 test using 1 worker
