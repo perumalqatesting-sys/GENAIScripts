@@ -252,3 +252,60 @@ Response:
     },
     "service_tier": "on_demand"
 }
+Assignment 4:
+
+Context:
+    write a Teams call transcript conversation between manager and developer. 
+
+Instruction: extracts only the action items (ignoring all other conversation)
+
+Example: 
+Features: [10:01 AM] Sarah Johnson (Project Manager):
+Good morning, everyone. Let’s start with a quick status update.
+
+[10:02 AM] Alex Chen (Developer):
+Morning! The API integration is about 80% complete. We’re still testing edge cases, but it should be ready for QA by Friday.
+
+[10:03 AM] Maria Lopez (Designer):
+I’ve finished the new UI mockups for the dashboard. I’ll share them after the call for feedback.
+
+[10:05 AM] Sarah Johnson (Project Manager):
+Thanks, Maria. Could you also prepare a quick walkthrough for the stakeholders next week?
+
+[10:06 AM] Maria Lopez (Designer):
+Yes, absolutely.
+
+[10:08 AM] James Miller (QA Lead):
+Quick update from QA — we found two critical bugs in the last sprint. Both have fixes in progress, and we’ll retest tomorrow.
+
+[10:12 AM] Sarah Johnson (Project Manager):
+Perfect. Let’s aim to close them before Friday’s demo. Any blockers we should be aware of?
+
+[10:13 AM] Alex Chen (Developer):
+Nothing major, just waiting on the API keys from the client.
+
+[10:14 AM] Sarah Johnson (Project Manager):
+Got it. I’ll follow up with them today. Thanks, everyone!
+
+Meeting ended at 10:15 AM.
+Persona: As a middle class people having good credit score
+
+Output format: 
+only the action items in a clean, structured format
+
+
+Tone: Please to get atleast 5 action itemsclean and understandable to everyone
+
+Response:
+✅ Action Items from Teams Call
+
+1.Developer to complete API integration and hand over for QA by Friday.
+
+2.Designer to prepare a walkthrough presentation for stakeholders next week.
+
+3.QA Lead to retest bug fixes tomorrow and confirm resolution.
+
+4.Manager to follow up with client about pending API keys.
+
+5.Team to ensure critical bugs are closed before Friday’s demo.
+
