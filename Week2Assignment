@@ -310,6 +310,7 @@ Response:
 5.Team to ensure critical bugs are closed before Friday’s demo.
 
 LLM API integration:
+Prompt: convert to valid JSON request body for an LLM API.
 Request:
 {
 "model": "deepseek-r1-distill-llama-70b",
