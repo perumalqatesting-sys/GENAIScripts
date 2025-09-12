@@ -309,3 +309,24 @@ Response:
 
 5.Team to ensure critical bugs are closed before Friday’s demo.
 
+LLM API integration:
+Request:
+{
+"model": "deepseek-r1-distill-llama-70b",
+"messages": [{
+     
+      "role": "system",
+      "content": "You are an AI Agent. Context: Write a Teams call transcript conversation between a manager and a developer. Instruction: Extract only the action items (ignoring all other conversation). Persona: As a middle class person having a good credit score. Tone: Provide at least 5 action items, clean and understandable to everyone. Output format: Only the action items from teams call in a clean, structured format as JSON."
+    },
+    {
+      "role": "user",
+      "content": "Example transcript:\n\n[10:01 AM] Sarah Johnson (Project Manager): Good morning, everyone. Let’s start with a quick status update.\n\n[10:02 AM] Alex Chen (Developer): Morning! The API integration is about 80% complete. We’re still testing edge cases, but it should be ready for QA by Friday.\n\n[10:03 AM] Maria Lopez (Designer): I’ve finished the new UI mockups for the dashboard. I’ll share them after the call for feedback.\n\n[10:05 AM] Sarah Johnson (Project Manager): Thanks, Maria. Could you also prepare a quick walkthrough for the stakeholders next week?\n\n[10:06 AM] Maria Lopez (Designer): Yes, absolutely.\n\n[10:08 AM] James Miller (QA Lead): Quick update from QA — we found two critical bugs in the last sprint. Both have fixes in progress, and we’ll retest tomorrow.\n\n[10:12 AM] Sarah Johnson (Project Manager): Perfect. Let’s aim to close them before Friday’s demo. Any blockers we should be aware of?\n\n[10:13 AM] Alex Chen (Developer): Nothing major, just waiting on the API keys from the client.\n\n[10:14 AM] Sarah Johnson (Project Manager): Got it. I’ll follow up with them today. Thanks, everyone!\n\nMeeting ended at 10:15 AM."
+    }
+  
+  
+
+
+],
+ //"max_tokens": 500,
+  "temperature": 0.1 // use temp between 0.1 - 0.2 at max. 
+}
